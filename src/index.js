@@ -1,11 +1,13 @@
-const express = require('express');
+const express = require('express')
 const morgan = require('morgan')
 const taskRoutes = require("./routes/tasks.routes.js")
+const cors = require('cors')
 
 const app = express()
 
 app.use(morgan("dev"))
 app.use(express.json())
+app.use(cors());
 
 app.use(taskRoutes)
 
